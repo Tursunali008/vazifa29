@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:vazifa29/logic/bloc/quiz_bloc.dart';
 import 'package:vazifa29/logic/bloc/quiz_state.dart';
 import 'package:vazifa29/model/quiz_model.dart';
@@ -43,8 +42,8 @@ class HomeScreen extends StatelessWidget {
               return Stack(
                 children: [
                   Positioned.fill(
-                    child: Image.network(
-                      "https://bogatyr.club/uploads/posts/2023-03/1678896872_bogatyr-club-p-fon-geim-foni-krasivo-20.jpg",
+                    child: Image.asset(
+                      "assets/images/salom.jpg",
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -167,50 +166,7 @@ class HomeScreen extends StatelessWidget {
             }
           },
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: const Color.fromARGB(91, 33, 149, 243),
-          onPressed: () {
-            Get.defaultDialog(
-              backgroundColor: const Color.fromARGB(237, 65, 166, 248),
-              barrierDismissible: false,
-              title: "Add Quize",
-              titleStyle: const TextStyle(color: Colors.white),
-              content: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  children: [
-                    TextField(
-                      controller: questionController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Question",
-                        hintStyle: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    TextField(
-                      controller: answerController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Answer",
-                        hintStyle: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Add your code here to handle adding the quiz
-                        Get.back();
-                      },
-                      child: const Text('Add'),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-          child: const Icon(Icons.add),
-        ),
+        
       ),
     );
   }
